@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Gallery Cards</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: #333;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 1rem;
+      text-decoration: none;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card .content {
+      padding: 1rem;
+    }
+
+    .card .content h3 {
+      margin: 0 0 0.5rem 0;
+    }
+
+    .card .content p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><a href="index.html">Amanda Xia</a></div>
+    <nav>
+      <a href="about.html">About Me</a>
+      <a href="experience.html">Experience</a>
+      <a href="resume.html">Resume</a>
+      <a href="art.html">Art Corner</a>
+    </nav>
+  </header>
+
+  <h1>Art Gallery</h1>
+
+  <div class="gallery">
+    <a href="art1.html" class="card">
+      <img src="https://via.placeholder.com/400x300?text=Art+1" alt="Art 1">
+      <div class="content">
+        <h3>Art 1</h3>
+        <p>A short description of Art 1 goes here.</p>
+      </div>
+    </a>
+
+    <a href="art2.html" class="card">
+      <img src="https://via.placeholder.com/400x300?text=Art+2" alt="Art 2">
+      <div class="content">
+        <h3>Art 2</h3>
+        <p>A short description of Art 2 goes here.</p>
+      </div>
+    </a>
+
+    <a href="art3.html" class="card">
+      <img src="https://via.placeholder.com/400x300?text=Art+3" alt="Art 3">
+      <div class="content">
+        <h3>Art 3</h3>
+        <p>A short description of Art 3 goes here.</p>
+      </div>
+    </a>
+
+    <a href="art4.html" class="card">
+      <img src="https://via.placeholder.com/400x300?text=Art+4" alt="Art 4">
+      <div class="content">
+        <h3>Art 4</h3>
+        <p>A short description of Art 4 goes here.</p>
+      </div>
+    </a>
+  </div>
+
+</body>
+</html>
