@@ -415,15 +415,17 @@ img.shot { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* detail sheet (opens as a side tab) */
 dialog.sheet {
-  margin: auto; padding: 0; width: min(820px, calc(100% - 32px)); max-width: none;
-  height: auto; max-height: min(90dvh, 900px); overflow-y: auto; color: var(--blush);
-  border: 1px solid var(--line); border-radius: 24px;
-  box-shadow: 0 30px 90px rgba(0, 0, 0, .55);
-  background: radial-gradient(70% 40% at 90% 0%, color-mix(in srgb, var(--accent) 24%, transparent), transparent), rgba(22, 20, 27, .97);
+  margin: 0; padding: 0; width: 100%; max-width: none; height: 100dvh; max-height: none;
+  overflow: hidden; color: var(--blush); border: 0; border-radius: 0;
+  grid-template-columns: minmax(0, 1fr) minmax(380px, 540px);
+  background: radial-gradient(60% 50% at 25% 20%, color-mix(in srgb, var(--accent) 22%, transparent), transparent), rgba(14, 13, 18, .97);
 }
+dialog.sheet[open] { display: grid; }
 dialog.sheet::backdrop { background: rgba(10, 9, 14, .62); backdrop-filter: blur(6px); }
-dialog.sheet[open] { animation: slidein .35s cubic-bezier(.2, .7, .2, 1); }
-@keyframes slidein { from { transform: translateY(24px) scale(.97); opacity: 0; } }
+dialog.sheet[open] { animation: fadein .25s ease-out; }
+dialog.sheet[open] .sheet-body { animation: panelin .4s cubic-bezier(.2, .7, .2, 1); }
+@keyframes fadein { from { opacity: 0; } }
+@keyframes panelin { from { transform: translateX(48px); opacity: 0; } }
 body:has(dialog[open]) { overflow: hidden; }
 
 .sheet-body { padding: 26px clamp(20px, 4vw, 48px) 64px; }
@@ -478,3 +480,54 @@ img.avatar-photo { object-position: 50% 28%; }
 /* bigger profile photo */
 .avatar { width: clamp(280px, 40vw, 540px); padding: 9px; }
 main.hero h1 { max-width: 10ch; font-size: clamp(3.2rem, 8vw, 7.5rem); }
+
+/* right-hand details panel + left carousel */
+dialog.sheet .sheet-body {
+  min-height: 0; overflow-y: auto;
+  border-left: 1px solid var(--line); background: rgba(22, 20, 27, .88);
+}
+.sheet-media {
+  min-height: 0; display: flex; flex-direction: column; gap: 16px;
+  padding: clamp(16px, 3vw, 44px);
+}
+.carousel-track {
+  flex: 1; min-height: 0; display: flex; overflow-x: auto; border-radius: 22px;
+  scroll-snap-type: x mandatory; scrollbar-width: none; box-shadow: 0 24px 70px rgba(0, 0, 0, .5);
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-track:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.slide { flex: 0 0 100%; min-height: 0; display: flex; scroll-snap-align: center; }
+.slide .shot { flex: 1; width: 100%; height: 100%; border: 0; border-radius: 0; box-shadow: none; transform: none; }
+.slide img.shot { object-fit: contain; background: rgba(0, 0, 0, .3); }
+.slide .cap { margin: 16px; padding: 4px 14px; font-size: .85rem; }
+.carousel-bar { display: flex; align-items: center; justify-content: center; gap: 18px; }
+.nav-btn {
+  width: 46px; height: 46px; padding: 0; font-size: 1.4rem; line-height: 1; cursor: pointer;
+  color: var(--blush); background: var(--glass); border: 1px solid var(--line); border-radius: 50%;
+  transition: background .2s, color .2s;
+}
+.nav-btn:hover, .nav-btn:focus-visible { background: var(--accent); color: var(--ink); outline: none; }
+.dots { display: flex; align-items: center; gap: 8px; }
+.dot { width: 10px; height: 10px; padding: 0; border: 0; border-radius: 999px; cursor: pointer; background: var(--line); transition: width .25s, background .25s; }
+.dot[aria-current="true"] { width: 28px; background: var(--accent); }
+
+@media (max-width: 860px) {
+  dialog.sheet { grid-template-columns: 1fr; grid-template-rows: 44dvh minmax(0, 1fr); }
+  dialog.sheet .sheet-body { border-left: 0; border-top: 1px solid var(--line); }
+}
+@media (prefers-reduced-motion: reduce) {
+  dialog.sheet[open], dialog.sheet[open] .sheet-body { animation: none; }
+}
+
+/* PDF tile on the card + PDF slide in the carousel */
+.pdf-tile::before {
+  content: "PDF"; position: absolute; inset: 0; display: grid; place-items: center;
+  font: 400 2.2rem "Instrument Serif", serif; color: var(--ink); opacity: .55;
+}
+.slide { position: relative; }
+.pdf-frame { flex: 1; width: 100%; height: 100%; border: 0; background: #fff; }
+.pdf-open {
+  position: absolute; right: 16px; bottom: 16px; padding: 9px 18px;
+  font: 700 .85rem "Manrope", sans-serif; color: var(--ink); text-decoration: none;
+  background: var(--accent); border-radius: 999px; box-shadow: 0 6px 20px rgba(0, 0, 0, .4);
+}

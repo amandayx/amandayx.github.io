@@ -25,7 +25,7 @@
   <header>
     <div class="logo"><a href="index.html">Amanda Xia</a></div>
     <nav>
-      <!-- <a href="about.html">About Me</a> -->
+      <a href="about.html">About Me</a>
       <a href="experience.html" aria-current="page">Experience</a>
       <a href="resume.html">Resume</a>
       <a href="art.html">Art Corner</a>
@@ -53,7 +53,7 @@
         The detail panel copies the card's photos automatically.
       -->
       <div class="proj-grid">
-
+<!-- 
         <button type="button" class="proj c-rose" data-open="p-relay">
           <span class="collage v1">
             <span class="shot g1"><span class="cap">Relay board</span></span>
@@ -80,13 +80,14 @@
             <span class="p-sum">Compared replacement isolators and built an OrCAD test board to evaluate robustness and noise reliability.</span>
             <span class="cta">View details</span>
           </span>
-        </button>
+        </button> -->
 
         <button type="button" class="proj c-gold" data-open="p-gaze">
           <span class="collage v3">
-            <span class="shot g3"><span class="cap">Ring PCB</span></span>
-            <span class="shot g1"><span class="cap">CAD case</span></span>
-            <span class="shot g5"><span class="cap">Bring-up</span></span>
+            <img class="shot" src="images/igmr-pcb.jpg" alt="Altium layout of the 4-layer ring-shaped PCB with LEDs and connectors" style="object-position:50% 50%">
+            <img class="shot" src="images/igmr-poster.jpg" alt="Amanda giving two thumbs up next to her research poster on pupil detection for a robotically aligned OCT system" style="object-position:68% 32%">
+            <img class="shot" src="images/igmrcase.png" alt="Amanda giving two thumbs up next to her research poster on pupil detection for a robotically aligned OCT system" style="object-position:68% 32%">
+            <span class="shot g6 pdf-tile" data-pdf="images/igmrposter.pdf" data-title="IGMR research poster (PDF)"><span class="cap">Poster PDF</span></span>
           </span>
           <span class="proj-body">
             <span class="org">Image Guided Medical Robotics Lab</span>
@@ -98,9 +99,9 @@
 
         <button type="button" class="proj c-silver" data-open="p-array">
           <span class="collage v4">
-            <span class="shot g4"><span class="cap">Sensor array</span></span>
-            <span class="shot g2"><span class="cap">Mux routing</span></span>
-            <span class="shot g6"><span class="cap">Firmware</span></span>
+            <img class="shot" src="images/pressure functionality.png" alt="Altium layout of the 4-layer ring-shaped PCB with LEDs and connectors" style="object-position:50% 50%">
+            <img class="shot" src="images/sixpcb.png" alt="Altium layout of the 4-layer ring-shaped PCB with LEDs and connectors" style="object-position:50% 50%">
+            <span class="shot g6 pdf-tile" data-pdf="images/sixposter.pdf" data-title="SIX research poster (PDF)"><span class="cap">Poster PDF</span></span>
           </span>
           <span class="proj-body">
             <span class="org">Sensing Intelligence and eXperience Lab</span>
@@ -127,6 +128,7 @@
   <!-- ============ DETAIL PANELS (open when a card is clicked) ============ -->
 
   <dialog class="sheet c-rose" id="p-relay" aria-labelledby="t-relay">
+    <div class="sheet-media" role="region" aria-roledescription="carousel" aria-label="Project photos"></div>
     <div class="sheet-body">
       <div class="sheet-top"><span class="org">Johnson &amp; Johnson MedTech (Ethicon)</span><button type="button" class="close" data-close>Close</button></div>
       <h2 id="t-relay">High-Power Life-Test Relay Redesign</h2>
@@ -136,7 +138,6 @@
         <div class="fact"><small>Where</small><b>Cincinnati, Ohio</b></div>
         <div class="fact"><small>Deployed on</small><b>20+ test stations</b></div>
       </div>
-      <div class="sheet-gallery"></div>
       <h4>Overview</h4>
       <p>Redesigned and debugged the high-power life-test relay circuit in Altium to prevent arcing, while working within limited space and mechanical limitations. The design was deployed across 20+ test stations to improve system reliability.</p>
       <h4>Also during this co-op</h4>
@@ -153,6 +154,7 @@
   </dialog>
 
   <dialog class="sheet c-sky" id="p-isolator" aria-labelledby="t-isolator">
+    <div class="sheet-media" role="region" aria-roledescription="carousel" aria-label="Project photos"></div>
     <div class="sheet-body">
       <div class="sheet-top"><span class="org">KLA Corporation</span><button type="button" class="close" data-close>Close</button></div>
       <h2 id="t-isolator">I²C Digital Isolator Evaluation</h2>
@@ -162,7 +164,6 @@
         <div class="fact"><small>Where</small><b>Ann Arbor, MI</b></div>
         <div class="fact"><small>Deliverables</small><b>Test board + write-up</b></div>
       </div>
-      <div class="sheet-gallery"></div>
       <h4>Overview</h4>
       <p>Evaluated replacement I²C digital isolators by reviewing datasheets, electrical specifications, and legacy board designs to find the best fit for system requirements.</p>
       <h4>What I did</h4>
@@ -180,6 +181,7 @@
   </dialog>
 
   <dialog class="sheet c-gold" id="p-gaze" aria-labelledby="t-gaze">
+    <div class="sheet-media" role="region" aria-roledescription="carousel" aria-label="Project photos"></div>
     <div class="sheet-body">
       <div class="sheet-top"><span class="org">Image Guided Medical Robotics Lab</span><button type="button" class="close" data-close>Close</button></div>
       <h2 id="t-gaze">Gaze-Tracking Ring PCB</h2>
@@ -189,7 +191,6 @@
         <div class="fact"><small>Where</small><b>Ann Arbor, MI</b></div>
         <div class="fact"><small>Board</small><b>4-layer, 10mm ring</b></div>
       </div>
-      <div class="sheet-gallery"></div>
       <h4>Overview</h4>
       <p>Designed a 4-layer, 10mm ring-shaped PCB in Altium with MOSFETs, infrared LEDs, and a Blackfly S synchronized capture system for optical sensing in medical robotics.</p>
       <h4>What I did</h4>
@@ -199,6 +200,8 @@
         <li>Tested and debugged prototypes (board bring-up) with oscilloscopes, power meters, and multimeters, resolving signal integrity, connectivity, and component library issues.</li>
         <li>Reviewed and synthesized research papers to inform experimental design and system development.</li>
       </ul>
+      <h4>Research poster</h4>
+      <p>“Improving Pupil Detection on a Robotically Aligned OCT System with Patterned LED Illumination.” The ring board holds eight LEDs that pulse in synchronized patterns for pupil tracking. The full poster is in the carousel on the left.</p>
       <h4>Tools</h4>
       <div class="chips"><span class="chip">Altium</span><span class="chip">Onshape</span><span class="chip">Oscilloscope</span><span class="chip">PCB bring-up</span></div>
       <h4>Your notes</h4>
@@ -207,6 +210,7 @@
   </dialog>
 
   <dialog class="sheet c-silver" id="p-array" aria-labelledby="t-array">
+    <div class="sheet-media" role="region" aria-roledescription="carousel" aria-label="Project photos"></div>
     <div class="sheet-body">
       <div class="sheet-top"><span class="org">Sensing Intelligence and eXperience Lab</span><button type="button" class="close" data-close>Close</button></div>
       <h2 id="t-array">Scalable Pressure Sensor Array</h2>
@@ -216,7 +220,6 @@
         <div class="fact"><small>Where</small><b>Ann Arbor, MI</b></div>
         <div class="fact"><small>Scaled</small><b>32×32 to 64×32</b></div>
       </div>
-      <div class="sheet-gallery"></div>
       <h4>Overview</h4>
       <p>Designed and scaled a pressure sensor array circuit from 32×32 to 64×32 through an expandable signal-routing architecture of multiplexers and digital logic, for higher-resolution sensing without significantly increasing IO pins.</p>
       <h4>What I did</h4>
@@ -232,19 +235,88 @@
   </dialog>
 
   <script>
-    // Open a project's detail panel; copy the card's photos into it the first time.
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Build the left-hand photo carousel from the card's three photos (once per project).
+    function buildCarousel(card, media) {
+      var track = document.createElement("div");
+      track.className = "carousel-track";
+      track.tabIndex = 0;
+      var dots = document.createElement("div");
+      dots.className = "dots";
+
+      card.querySelectorAll(".collage .shot").forEach(function (shot, i) {
+        var slide = document.createElement("div");
+        slide.className = "slide";
+        if (shot.dataset.pdf) {
+          // PDF slide: embedded viewer plus a link to open it in its own tab
+          var frame = document.createElement("iframe");
+          frame.className = "pdf-frame";
+          frame.src = shot.dataset.pdf + "#view=FitH";
+          frame.title = shot.dataset.title || "PDF";
+          var open = document.createElement("a");
+          open.className = "pdf-open";
+          open.href = shot.dataset.pdf;
+          open.target = "_blank";
+          open.rel = "noopener";
+          open.textContent = "Open PDF in new tab";
+          slide.append(frame, open);
+        } else {
+          slide.appendChild(shot.cloneNode(true));
+        }
+        track.appendChild(slide);
+        var dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "dot";
+        dot.setAttribute("aria-label", "Show photo " + (i + 1));
+        dot.addEventListener("click", function () { go(i); });
+        dots.appendChild(dot);
+      });
+
+      var prev = document.createElement("button");
+      prev.type = "button"; prev.className = "nav-btn"; prev.textContent = "\u2039";
+      prev.setAttribute("aria-label", "Previous photo");
+      var next = document.createElement("button");
+      next.type = "button"; next.className = "nav-btn"; next.textContent = "\u203A";
+      next.setAttribute("aria-label", "Next photo");
+      var bar = document.createElement("div");
+      bar.className = "carousel-bar";
+      bar.append(prev, dots, next);
+      media.append(track, bar);
+
+      var count = track.children.length;
+      function current() { return Math.round(track.scrollLeft / track.clientWidth); }
+      function go(i) {
+        i = (i + count) % count;
+        track.scrollTo({ left: i * track.clientWidth, behavior: reduceMotion ? "auto" : "smooth" });
+      }
+      function mark() {
+        var c = current();
+        Array.prototype.forEach.call(dots.children, function (d, i) {
+          d.setAttribute("aria-current", i === c ? "true" : "false");
+        });
+      }
+      prev.addEventListener("click", function () { go(current() - 1); });
+      next.addEventListener("click", function () { go(current() + 1); });
+      track.addEventListener("scroll", mark, { passive: true });
+      media.closest("dialog").addEventListener("keydown", function (e) {
+        if (e.key === "ArrowLeft") go(current() - 1);
+        if (e.key === "ArrowRight") go(current() + 1);
+      });
+      media._reset = function () { track.scrollLeft = 0; mark(); };
+    }
+
     document.querySelectorAll("[data-open]").forEach(function (card) {
       card.addEventListener("click", function () {
         var sheet = document.getElementById(card.dataset.open);
-        var slot = sheet.querySelector(".sheet-gallery");
-        if (!slot.firstChild) slot.appendChild(card.querySelector(".collage").cloneNode(true));
+        var media = sheet.querySelector(".sheet-media");
+        if (!media.firstChild) buildCarousel(card, media);
         sheet.showModal();
+        media._reset();
       });
     });
     document.querySelectorAll("dialog.sheet").forEach(function (sheet) {
       sheet.querySelector("[data-close]").addEventListener("click", function () { sheet.close(); });
-      // clicking the dimmed area outside the panel also closes it
-      sheet.addEventListener("click", function (e) { if (e.target === sheet) sheet.close(); });
     });
   </script>
 </body>
