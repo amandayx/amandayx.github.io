@@ -25,7 +25,6 @@
   <header>
     <div class="logo"><a href="index.html">Amanda Xia</a></div>
     <nav>
-      <a href="about.html">About Me</a>
       <a href="experience.html" aria-current="page">Experience</a>
       <a href="resume.html">Resume</a>
       <a href="art.html">Art Corner</a>
@@ -82,7 +81,7 @@
           </span>
         </button> -->
 
-        <button type="button" class="proj c-gold" data-open="p-gaze">
+        <button type="button" class="proj c-rose" data-open="p-gaze">
           <span class="collage v3">
             <img class="shot" src="images/igmr-pcb.jpg" alt="Altium layout of the 4-layer ring-shaped PCB with LEDs and connectors" style="object-position:50% 50%">
             <img class="shot" src="images/igmr-poster.jpg" alt="Amanda giving two thumbs up next to her research poster on pupil detection for a robotically aligned OCT system" style="object-position:68% 32%">
@@ -97,7 +96,7 @@
           </span>
         </button>
 
-        <button type="button" class="proj c-silver" data-open="p-array">
+        <button type="button" class="proj c-sky" data-open="p-array">
           <span class="collage v4">
             <img class="shot" src="images/pressure functionality.png" alt="Altium layout of the 4-layer ring-shaped PCB with LEDs and connectors" style="object-position:50% 50%">
             <img class="shot" src="images/sixpcb.png" alt="Altium layout of the 4-layer ring-shaped PCB with LEDs and connectors" style="object-position:50% 50%">
@@ -106,7 +105,21 @@
           <span class="proj-body">
             <span class="org">Sensing Intelligence and eXperience Lab</span>
             <span class="p-title">Scalable Pressure Sensor Array</span>
-            <span class="p-sum">Scaled a 32×32 array to 64×32 using multiplexers and digital logic without adding many IO pins.</span>
+            <span class="p-sum">Developed a twin-size bed pressure mat as a non-invasive method to monitor breathing</span>
+            <span class="cta">View details</span>
+          </span>
+        </button>
+
+        <button type="button" class="proj c-gold" data-open="p-solar">
+          <span class="collage v4">
+            <!-- <img class="shot" src="images/pressure functionality.png" alt="Altium layout of the 4-layer ring-shaped PCB with LEDs and connectors" style="object-position:50% 50%">
+            <img class="shot" src="images/sixpcb.png" alt="Altium layout of the 4-layer ring-shaped PCB with LEDs and connectors" style="object-position:50% 50%">
+            <span class="shot g6 pdf-tile" data-pdf="images/sixposter.pdf" data-title="SIX research poster (PDF)"><span class="cap">Poster PDF</span></span> -->
+          </span>
+          <span class="proj-body">
+            <span class="org">University of Michigan - Solar Car</span>
+            <span class="p-title">Microsystem Team Member</span>
+            <span class="p-sum">Worked on variety of different PCB boards in the solar car with Altium, including current sense, battery management system board and more</span>
             <span class="cta">View details</span>
           </span>
         </button>
@@ -115,12 +128,30 @@
     </section>
 
     <section class="block">
-      <h2>Involvement</h2>
+      <h2>Leadership & Activities</h2>
       <div class="mini-grid">
-        <div class="panel mini"><strong>Michigan Solar Car Team</strong><span>Microsystem Team Member · Aug 2024 – Present</span></div>
         <div class="panel mini"><strong>Women in Electrical &amp; Computer Engineering</strong><span>Club Officer · Aug 2025 – Present</span></div>
         <div class="panel mini"><strong>Girls in Electrical Engineering &amp; Computer Science</strong><span>Peer Mentor · Aug 2024 – Present</span></div>
         <div class="panel mini"><strong>Michigan InVent</strong><span>Workshop Facilitator &amp; Instructor · Aug 2025 – Present</span></div>
+        <div class="panel mini"><strong>Engineering Honors</strong><span>Member· Aug 2025 – Present</span></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>NDA Covered Experience</h2>
+      <div class="mini-grid">
+        <div class="panel mini"><strong>Johnson &amp; Johnson</strong><span>Electrical Engineering R&D Co-op · Aug 2026 – Dec 2026</span></div>
+        <div class="panel mini"><strong>KLA</strong><span>Electrical Design Engineering Intern · June 2026 – Aug 2026</span></div>
+        <div class="panel mini"><strong>Michigan Venture Club (Ambient Intelligence)</strong><span>Lead Analyst · Dec 2024 – Dec 2025</span></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>SKILLS</h2>
+      <div class="mini-grid">
+        <!-- <div class="panel mini"><strong>Johnson &amp; Johnson</strong><span>Electrical Engineering R&D Co-op · Aug 2026 – Dec 2026</span></div>
+        <div class="panel mini"><strong>KLA</strong><span>Electrical Design Engineering Intern · June 2026 – Aug 2026</span></div>
+        <div class="panel mini"><strong>Michigan Venture Club (Ambient Intelligence)</strong><span>Lead Analyst · Dec 2024 – Dec 2025</span></div> -->
       </div>
     </section>
   </main>
@@ -180,7 +211,7 @@
     </div>
   </dialog>
 
-  <dialog class="sheet c-gold" id="p-gaze" aria-labelledby="t-gaze">
+  <dialog class="sheet c-rose" id="p-gaze" aria-labelledby="t-gaze">
     <div class="sheet-media" role="region" aria-roledescription="carousel" aria-label="Project photos"></div>
     <div class="sheet-body">
       <div class="sheet-top"><span class="org">Image Guided Medical Robotics Lab</span><button type="button" class="close" data-close>Close</button></div>
@@ -209,7 +240,7 @@
     </div>
   </dialog>
 
-  <dialog class="sheet c-silver" id="p-array" aria-labelledby="t-array">
+  <dialog class="sheet c-sky" id="p-array" aria-labelledby="t-array">
     <div class="sheet-media" role="region" aria-roledescription="carousel" aria-label="Project photos"></div>
     <div class="sheet-body">
       <div class="sheet-top"><span class="org">Sensing Intelligence and eXperience Lab</span><button type="button" class="close" data-close>Close</button></div>
@@ -226,6 +257,30 @@
       <ul>
         <li>Soldered and debugged 50+ hardware components (MCUs, ICs, passives) using datasheets, multimeters, and microscopes to ensure functional prototypes.</li>
         <li>Developed and modified Arduino firmware using GPIO, I²C, and SPI peripherals to support evolving hardware.</li>
+      </ul>
+      <h4>Tools</h4>
+      <div class="chips"><span class="chip">Multiplexers</span><span class="chip">Digital logic</span><span class="chip">Arduino</span><span class="chip">SPI / I²C</span><span class="chip">SMD soldering</span></div>
+      <h4>Your notes</h4>
+      <div class="notes"><p>Space for you: how the routing scales, the trade-offs you weighed, results, and what you would improve next.</p></div>
+    </div>
+  </dialog>
+
+   <dialog class="sheet c-gold" id="p-solar" aria-labelledby="t-solar">
+    <div class="sheet-media" role="region" aria-roledescription="carousel" aria-label="Project photos"></div>
+    <div class="sheet-body">
+      <div class="sheet-top"><span class="org">University of Michigan - Solar Car</span><button type="button" class="close" data-close>Close</button></div>
+      <h2 id="t-solar">University of Michigan - Solar Car</h2>
+      <div class="facts">
+        <div class="fact"><small>Role</small><b>Microsystem Team Member</b></div>
+        <div class="fact"><small>When</small><b>Aug 2024 – Present</b></div>
+        <div class="fact"><small>Where</small><b>Ann Arbor, MI</b></div>
+        <div class="fact"><small>Scaled</small><b>32×32 to 64×32</b></div>
+      </div>
+      <h4>Overview</h4>
+      <p>Worked on variety of different PCB boards in the solar car with Altium, including current sense, battery management system board and more</p>
+      <h4>What I did</h4>
+      <ul>
+        
       </ul>
       <h4>Tools</h4>
       <div class="chips"><span class="chip">Multiplexers</span><span class="chip">Digital logic</span><span class="chip">Arduino</span><span class="chip">SPI / I²C</span><span class="chip">SMD soldering</span></div>
