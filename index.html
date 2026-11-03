@@ -1,61 +1,46 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GitHub Pages Header Example</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between; /* pushes tabs to right */
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #333;
-      color: white;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 1rem;
-      transition: color 0.2s;
-    }
-
-    nav a:hover {
-      color: #ffcc00;
-    }
-  </style>
+  <title>Amanda Xia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <canvas id="three-canvas" aria-hidden="true"></canvas>
+
   <header>
-  <div class="logo">
-    <a href="index.html">Amanda Xia</a>
-  </div>
-  <nav>
-    <a href="about.html">About Me</a>
-    <a href="experience.html">Experience</a>
-    <a href="resume.html">Resume</a>
-    <a href="art.html">Art Corner</a>
-  </nav>
-</header>
+    <div class="logo">
+      <a href="index.html">Amanda Xia</a>
+    </div>
+    <nav>
+      <!-- <a href="about.html">About Me</a> -->
+      <a href="experience.html">Experience</a>
+      <a href="resume.html">Resume</a>
+      <a href="art.html">Art Corner</a>
+    </nav>
+  </header>
 
-  <main>
-    <h1>Welcome to my GitHub Page!</h1>
-    <p>Click the tabs in the header to navigate.</p>
-     <canvas id="three-canvas"></canvas>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
-  <script src="script.js"></script> 
+  <main class="hero">
+    <div class="hero-text">
+      <h2>Hi! My name is</h2>
+      <h1>Amanda Xia</h1>
+      <p>Current student in Engineering at the University of Michigan passionate about innovation, entrepreneurship and using technology to improve people's lives.</p>
+      <div class="actions">
+        <a class="btn" href="experience.html">Portfolio &amp; Experience</a>
+        <a class="btn ghost" href="resume.html">About me</a>
+      </div>
+    </div>
 
+    <div class="avatar">
+      <img class="avatar-photo" src="images/15193.jpg" alt="Me Myself and I AHHHHH">
+    </div>
   </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+  <script src="script2.js"></script>
+
 </body>
 </html>

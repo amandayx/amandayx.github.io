@@ -3,134 +3,249 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Art Gallery Cards</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-    }
-
-    header {
-      background: #333;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header .logo a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    nav a {
-      color: white;
-      margin-left: 1rem;
-      text-decoration: none;
-    }
-
-    h1 {
-      text-align: center;
-      margin: 2rem 0;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .card {
-      background: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .card .content {
-      padding: 1rem;
-    }
-
-    .card .content h3 {
-      margin: 0 0 0.5rem 0;
-    }
-
-    .card .content p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: #555;
-    }
-  </style>
+  <title>Engineering Portfolio | Amanda Xia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="decor" aria-hidden="true">
+    <span class="gem" style="--x:3%;  --y:14%; --s:60px; --c:#ff7bac; --r:-14deg"></span>
+    <span class="gem" style="--x:91%; --y:8%;  --s:84px; --c:#6f9dff; --r:12deg"></span>
+    <span class="gem hide-sm" style="--x:94%; --y:50%; --s:44px; --c:#d8c25a; --r:-8deg"></span>
+    <span class="gem hide-sm" style="--x:2%;  --y:62%; --s:50px; --c:#d6d5da; --r:10deg"></span>
+    <span class="gem" style="--x:86%; --y:86%; --s:66px; --c:#ff7bac; --r:18deg"></span>
+    <span class="spark" style="--x:16%; --y:8%;  --s:26px; --c:#ffe6ec"></span>
+    <span class="spark" style="--x:78%; --y:28%; --s:32px; --c:#ffe6ec"></span>
+    <span class="spark hide-sm" style="--x:5%;  --y:42%; --s:20px; --c:#d8c25a"></span>
+    <span class="spark" style="--x:97%; --y:70%; --s:22px; --c:#ff7bac"></span>
+    <span class="spark hide-sm" style="--x:48%; --y:94%; --s:28px; --c:#ffe6ec"></span>
+  </div>
 
   <header>
     <div class="logo"><a href="index.html">Amanda Xia</a></div>
     <nav>
-      <a href="about.html">About Me</a>
-      <a href="experience.html">Experience</a>
+      <!-- <a href="about.html">About Me</a> -->
+      <a href="experience.html" aria-current="page">Experience</a>
       <a href="resume.html">Resume</a>
       <a href="art.html">Art Corner</a>
     </nav>
   </header>
 
-  <h1>Art Gallery</h1>
-
-  <div class="gallery">
-    <a href="art1.html" class="card">
-      <img src="https://via.placeholder.com/400x300?text=Art+1" alt="Art 1">
-      <div class="content">
-        <h3>Art 1</h3>
-        <p>A short description of Art 1 goes here.</p>
+  <main class="page">
+    <div class="page-head">
+      <div>
+        <h1>Engineering Portfolio</h1>
+        <p class="lede">Circuit design, PCB bring-up, and test automation across medical devices, semiconductors, and robotics research. Select a project to see the details.</p>
       </div>
-    </a>
-
-    <a href="art2.html" class="card">
-      <img src="https://via.placeholder.com/400x300?text=Art+2" alt="Art 2">
-      <div class="content">
-        <h3>Art 2</h3>
-        <p>A short description of Art 2 goes here.</p>
+      <div class="actions">
+        <a class="btn" href="resume.html">View resume</a>
+        <a class="btn ghost" href="mailto:amandayx@umich.edu">Email me</a>
       </div>
-    </a>
+    </div>
 
-    <a href="art3.html" class="card">
-      <img src="https://via.placeholder.com/400x300?text=Art+3" alt="Art 3">
-      <div class="content">
-        <h3>Art 3</h3>
-        <p>A short description of Art 3 goes here.</p>
+    <section class="block">
+      <h2>Projects</h2>
+      <!--
+        PHOTOS: each card has three placeholder shots. Replace a placeholder
+        <span class="shot g1">…</span> with your own image, keeping the class "shot":
+        <img class="shot" src="images/relay-board.jpg" alt="Describe the photo">
+        The detail panel copies the card's photos automatically.
+      -->
+      <div class="proj-grid">
+
+        <button type="button" class="proj c-rose" data-open="p-relay">
+          <span class="collage v1">
+            <span class="shot g1"><span class="cap">Relay board</span></span>
+            <span class="shot g4"><span class="cap">Layout</span></span>
+            <span class="shot g3"><span class="cap">Test station</span></span>
+          </span>
+          <span class="proj-body">
+            <span class="org">Johnson &amp; Johnson MedTech (Ethicon)</span>
+            <span class="p-title">High-Power Life-Test Relay Redesign</span>
+            <span class="p-sum">Redesigned a relay circuit to prevent arcing in a tight enclosure, deployed across 20+ test stations.</span>
+            <span class="cta">View details</span>
+          </span>
+        </button>
+
+        <button type="button" class="proj c-sky" data-open="p-isolator">
+          <span class="collage v2">
+            <span class="shot g2"><span class="cap">Test board</span></span>
+            <span class="shot g5"><span class="cap">Schematic</span></span>
+            <span class="shot g6"><span class="cap">Bench setup</span></span>
+          </span>
+          <span class="proj-body">
+            <span class="org">KLA Corporation</span>
+            <span class="p-title">I²C Digital Isolator Evaluation</span>
+            <span class="p-sum">Compared replacement isolators and built an OrCAD test board to evaluate robustness and noise reliability.</span>
+            <span class="cta">View details</span>
+          </span>
+        </button>
+
+        <button type="button" class="proj c-gold" data-open="p-gaze">
+          <span class="collage v3">
+            <span class="shot g3"><span class="cap">Ring PCB</span></span>
+            <span class="shot g1"><span class="cap">CAD case</span></span>
+            <span class="shot g5"><span class="cap">Bring-up</span></span>
+          </span>
+          <span class="proj-body">
+            <span class="org">Image Guided Medical Robotics Lab</span>
+            <span class="p-title">Gaze-Tracking Ring PCB</span>
+            <span class="p-sum">A 4-layer, 10mm ring-shaped board for optical sensing, integrated with a robotic OCT scanner.</span>
+            <span class="cta">View details</span>
+          </span>
+        </button>
+
+        <button type="button" class="proj c-silver" data-open="p-array">
+          <span class="collage v4">
+            <span class="shot g4"><span class="cap">Sensor array</span></span>
+            <span class="shot g2"><span class="cap">Mux routing</span></span>
+            <span class="shot g6"><span class="cap">Firmware</span></span>
+          </span>
+          <span class="proj-body">
+            <span class="org">Sensing Intelligence and eXperience Lab</span>
+            <span class="p-title">Scalable Pressure Sensor Array</span>
+            <span class="p-sum">Scaled a 32×32 array to 64×32 using multiplexers and digital logic without adding many IO pins.</span>
+            <span class="cta">View details</span>
+          </span>
+        </button>
+
       </div>
-    </a>
+    </section>
 
-    <a href="art4.html" class="card">
-      <img src="https://via.placeholder.com/400x300?text=Art+4" alt="Art 4">
-      <div class="content">
-        <h3>Art 4</h3>
-        <p>A short description of Art 4 goes here.</p>
+    <section class="block">
+      <h2>Involvement</h2>
+      <div class="mini-grid">
+        <div class="panel mini"><strong>Michigan Solar Car Team</strong><span>Microsystem Team Member · Aug 2024 – Present</span></div>
+        <div class="panel mini"><strong>Women in Electrical &amp; Computer Engineering</strong><span>Club Officer · Aug 2025 – Present</span></div>
+        <div class="panel mini"><strong>Girls in Electrical Engineering &amp; Computer Science</strong><span>Peer Mentor · Aug 2024 – Present</span></div>
+        <div class="panel mini"><strong>Michigan InVent</strong><span>Workshop Facilitator &amp; Instructor · Aug 2025 – Present</span></div>
       </div>
-    </a>
-  </div>
+    </section>
+  </main>
 
+  <!-- ============ DETAIL PANELS (open when a card is clicked) ============ -->
+
+  <dialog class="sheet c-rose" id="p-relay" aria-labelledby="t-relay">
+    <div class="sheet-body">
+      <div class="sheet-top"><span class="org">Johnson &amp; Johnson MedTech (Ethicon)</span><button type="button" class="close" data-close>Close</button></div>
+      <h2 id="t-relay">High-Power Life-Test Relay Redesign</h2>
+      <div class="facts">
+        <div class="fact"><small>Role</small><b>EE R&amp;D Co-op</b></div>
+        <div class="fact"><small>When</small><b>Aug – Dec 2026</b></div>
+        <div class="fact"><small>Where</small><b>Cincinnati, Ohio</b></div>
+        <div class="fact"><small>Deployed on</small><b>20+ test stations</b></div>
+      </div>
+      <div class="sheet-gallery"></div>
+      <h4>Overview</h4>
+      <p>Redesigned and debugged the high-power life-test relay circuit in Altium to prevent arcing, while working within limited space and mechanical limitations. The design was deployed across 20+ test stations to improve system reliability.</p>
+      <h4>Also during this co-op</h4>
+      <ul>
+        <li>Developed LabVIEW code with a QMH to automate vessel measurement data acquisition for device reliability testing.</li>
+        <li>Debug analog op-amp filter circuits to determine circuit limitations and areas of improvement.</li>
+        <li>Articulate system requirements, including mechanical, electrical, and calibration, to redesign a grasping force tester.</li>
+      </ul>
+      <h4>Tools</h4>
+      <div class="chips"><span class="chip">Altium</span><span class="chip">LabVIEW</span><span class="chip">Analog circuits</span></div>
+      <h4>Your notes</h4>
+      <div class="notes"><p>Space for you: what caused the arcing, how you chose the fix, what you learned, and any schematics or test results you can share.</p></div>
+    </div>
+  </dialog>
+
+  <dialog class="sheet c-sky" id="p-isolator" aria-labelledby="t-isolator">
+    <div class="sheet-body">
+      <div class="sheet-top"><span class="org">KLA Corporation</span><button type="button" class="close" data-close>Close</button></div>
+      <h2 id="t-isolator">I²C Digital Isolator Evaluation</h2>
+      <div class="facts">
+        <div class="fact"><small>Role</small><b>EE Design Intern</b></div>
+        <div class="fact"><small>When</small><b>June – Aug 2026</b></div>
+        <div class="fact"><small>Where</small><b>Ann Arbor, MI</b></div>
+        <div class="fact"><small>Deliverables</small><b>Test board + write-up</b></div>
+      </div>
+      <div class="sheet-gallery"></div>
+      <h4>Overview</h4>
+      <p>Evaluated replacement I²C digital isolators by reviewing datasheets, electrical specifications, and legacy board designs to find the best fit for system requirements.</p>
+      <h4>What I did</h4>
+      <ul>
+        <li>Designed a test board in OrCAD to evaluate the robustness and noise reliability of candidate isolators.</li>
+        <li>Created technical documentation on component-selection rationale and engineering recommendations.</li>
+        <li>Presented at weekly meetings and integrated feedback from a cross-functional team.</li>
+        <li>Analyzed trade-offs to select and characterize resistors, capacitors, and inductors for target frequency response and filtering requirements.</li>
+      </ul>
+      <h4>Tools</h4>
+      <div class="chips"><span class="chip">OrCAD Capture/PCB</span><span class="chip">I²C</span><span class="chip">Datasheet analysis</span></div>
+      <h4>Your notes</h4>
+      <div class="notes"><p>Space for you: which isolators you compared, how you tested them, what you recommended, and what you learned.</p></div>
+    </div>
+  </dialog>
+
+  <dialog class="sheet c-gold" id="p-gaze" aria-labelledby="t-gaze">
+    <div class="sheet-body">
+      <div class="sheet-top"><span class="org">Image Guided Medical Robotics Lab</span><button type="button" class="close" data-close>Close</button></div>
+      <h2 id="t-gaze">Gaze-Tracking Ring PCB</h2>
+      <div class="facts">
+        <div class="fact"><small>Role</small><b>Undergrad Researcher</b></div>
+        <div class="fact"><small>When</small><b>Aug 2025 – Present</b></div>
+        <div class="fact"><small>Where</small><b>Ann Arbor, MI</b></div>
+        <div class="fact"><small>Board</small><b>4-layer, 10mm ring</b></div>
+      </div>
+      <div class="sheet-gallery"></div>
+      <h4>Overview</h4>
+      <p>Designed a 4-layer, 10mm ring-shaped PCB in Altium with MOSFETs, infrared LEDs, and a Blackfly S synchronized capture system for optical sensing in medical robotics.</p>
+      <h4>What I did</h4>
+      <ul>
+        <li>Integrated a gaze-tracking subsystem with the larger Robotically Aligned OCT scanner, implementing compatible power, data, and control interfaces.</li>
+        <li>Designed a CAD case to improve eye identification speed.</li>
+        <li>Tested and debugged prototypes (board bring-up) with oscilloscopes, power meters, and multimeters, resolving signal integrity, connectivity, and component library issues.</li>
+        <li>Reviewed and synthesized research papers to inform experimental design and system development.</li>
+      </ul>
+      <h4>Tools</h4>
+      <div class="chips"><span class="chip">Altium</span><span class="chip">Onshape</span><span class="chip">Oscilloscope</span><span class="chip">PCB bring-up</span></div>
+      <h4>Your notes</h4>
+      <div class="notes"><p>Space for you: why a ring form factor, the hardest bring-up bug, how the board fits the OCT system, and what you learned.</p></div>
+    </div>
+  </dialog>
+
+  <dialog class="sheet c-silver" id="p-array" aria-labelledby="t-array">
+    <div class="sheet-body">
+      <div class="sheet-top"><span class="org">Sensing Intelligence and eXperience Lab</span><button type="button" class="close" data-close>Close</button></div>
+      <h2 id="t-array">Scalable Pressure Sensor Array</h2>
+      <div class="facts">
+        <div class="fact"><small>Role</small><b>Undergrad Researcher</b></div>
+        <div class="fact"><small>When</small><b>Aug 2025 – Present</b></div>
+        <div class="fact"><small>Where</small><b>Ann Arbor, MI</b></div>
+        <div class="fact"><small>Scaled</small><b>32×32 to 64×32</b></div>
+      </div>
+      <div class="sheet-gallery"></div>
+      <h4>Overview</h4>
+      <p>Designed and scaled a pressure sensor array circuit from 32×32 to 64×32 through an expandable signal-routing architecture of multiplexers and digital logic, for higher-resolution sensing without significantly increasing IO pins.</p>
+      <h4>What I did</h4>
+      <ul>
+        <li>Soldered and debugged 50+ hardware components (MCUs, ICs, passives) using datasheets, multimeters, and microscopes to ensure functional prototypes.</li>
+        <li>Developed and modified Arduino firmware using GPIO, I²C, and SPI peripherals to support evolving hardware.</li>
+      </ul>
+      <h4>Tools</h4>
+      <div class="chips"><span class="chip">Multiplexers</span><span class="chip">Digital logic</span><span class="chip">Arduino</span><span class="chip">SPI / I²C</span><span class="chip">SMD soldering</span></div>
+      <h4>Your notes</h4>
+      <div class="notes"><p>Space for you: how the routing scales, the trade-offs you weighed, results, and what you would improve next.</p></div>
+    </div>
+  </dialog>
+
+  <script>
+    // Open a project's detail panel; copy the card's photos into it the first time.
+    document.querySelectorAll("[data-open]").forEach(function (card) {
+      card.addEventListener("click", function () {
+        var sheet = document.getElementById(card.dataset.open);
+        var slot = sheet.querySelector(".sheet-gallery");
+        if (!slot.firstChild) slot.appendChild(card.querySelector(".collage").cloneNode(true));
+        sheet.showModal();
+      });
+    });
+    document.querySelectorAll("dialog.sheet").forEach(function (sheet) {
+      sheet.querySelector("[data-close]").addEventListener("click", function () { sheet.close(); });
+      // clicking the dimmed area outside the panel also closes it
+      sheet.addEventListener("click", function (e) { if (e.target === sheet) sheet.close(); });
+    });
+  </script>
 </body>
 </html>
